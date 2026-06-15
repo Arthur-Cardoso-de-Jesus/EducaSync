@@ -1,0 +1,91 @@
+# ==============================================================================
+# 📋 Guia de Instalação e Execução Local — EducaSync
+# ==============================================================================
+
+Este documento descreve as etapas necessárias para clonar, configurar, migrar 
+o banco de dados e executar o ecossistema EducaSync (Laravel + React Inertia) 
+em ambiente de desenvolvimento local.
+
+### 🧰 Pré-requisitos Mínimos
+Antes de iniciar, certifique-se de ter instalado em sua máquina:
+* PHP (Versão >= 8.1)
+* Composer (Gerenciador de dependências PHP)
+* Node.js (Versão >= 18.x) & NPM
+* Servidor MySQL ativo (Laragon, XAMPP ou similar)
+
+--------------------------------------------------------------------------------
+## 🛠️ Passo a Passo para Execução
+--------------------------------------------------------------------------------
+
+### Passo 1: Clonar o Repositório e Acessar a Pasta
+Abra o seu terminal (Git Bash, Prompt de Comando ou terminal do VS Code) e execute os comandos:
+
+git clone https://github.com/seu-usuario/educasync-net.git
+cd educasync-net
+
+
+### Passo 2: Instalar as Dependências do Back-end (Laravel)
+Instale todos os pacotes PHP necessários para rodar o core da aplicação:
+
+composer install
+
+
+### Passo 3: Instalar as Dependências do Front-end (React)
+Instale os pacotes do Node.js, incluindo o React e o Tailwind CSS:
+
+npm install
+
+
+### Passo 4: Configurar o Arquivo de Ambiente (.env)
+O Laravel precisa de um arquivo .env para gerenciar as credenciais do banco.
+1. Duplique o arquivo de exemplo executando o comando:
+   
+   cp .env.example .env
+
+2. Abra o arquivo .env no VS Code e configure o bloco do banco de dados:
+   
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=educasync        # Nome do banco de dados que criará no MySQL
+   DB_USERNAME=root             # Usuário padrão (root)
+   DB_PASSWORD=                 # Senha padrão (em branco no Laragon/XAMPP)
+
+
+### Passo 5: Gerar a Chave de Criptografia da Aplicação
+Gere a chave exclusiva de segurança do Laravel com o comando:
+
+php artisan key:generate
+
+
+### Passo 6: Criar e Popular o Banco de Dados
+Com o MySQL ativo, crie as tabelas e insira os dados iniciais com o comando:
+
+php artisan migrate --seed
+
+
+### Passo 7: Compilar os Assets do Front-end (Vite)
+Para rodar o React e o Tailwind em tempo real, inicialize o servidor do Vite:
+
+npm run dev
+
+*(Mantenha este terminal aberto).*
+
+
+### Passo 8: Inicializar o Servidor do Laravel
+Abra um SEGUNDO terminal na mesma pasta do projeto e ligue o servidor PHP:
+
+php artisan serve
+
+
+--------------------------------------------------------------------------------
+## 🚀 Acessando a Aplicação
+--------------------------------------------------------------------------------
+
+Com os dois terminais ativos (npm run dev e php artisan serve), abra o seu 
+navegador e acesse o endereço local:
+
+🌐 URL Local: http://127.0.0.1:8000
+
+O sistema carregará imediatamente a tela de Welcome com o plano de fundo 
+configurado, pronto para realizar o login e navegar pelos painéis do EducaSync.
