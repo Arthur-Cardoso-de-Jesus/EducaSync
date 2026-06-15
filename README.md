@@ -1,66 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏢 EducaSync
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Sistema Inteligente de Gestão de Ativos, Salas e Locações Escolares.
 
-## About Laravel
+O **EducaSync** é uma plataforma web moderna desenvolvida para centralizar, organizar e monitorar o uso de infraestrutura e recursos pedagógicos em instituições de ensino. O sistema resolve o problema de conflitos de horários em reservas de salas e laboratórios, gerencia a manutenção de ativos (como computadores, projetores e ar-condicionado) e fornece visibilidade total para gestores de múltiplas unidades (escolas/polos).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![Laravel Version](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=flat-square&logo=laravel&logoColor=white)
+![React Version](https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=flat-square&logo=mysql&logoColor=white)
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Funcionalidades Principais
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 👤 Níveis de Acesso Dinâmicos (RBAC)
+* **SuperAdmin (Administrador Global):** Possui visão macro de todas as unidades escolares do município/rede. Pode criar novas escolas, gerenciar usuários, auditar salas e aplicar filtros globais para alternar entre as unidades de forma fluida.
+* **Gestor de Unidade (Admin Local):** Tem acesso restrito e focado estritamente nas salas, turmas e ativos da sua própria escola. O sistema bloqueia e oculta dados de outras sedes por questões de segurança e privacidade.
+* **Professor / Funcionário:** Interface simplificada para consulta de disponibilidade de salas e agendamento de recursos para aulas e atividades pedagógicas.
 
-## Laravel Sponsors
+### 🏫 Gestão de Infraestrutura e Ativos
+* Visualização em tempo real do status de cada sala (Bloco, Nome, Capacidade).
+* Filtros inteligentes por hardware específico: quantidade de computadores funcionais, presença de ar-condicionado e projetores operacionais.
+* Controle relacional de agendamentos (`prox` registros de locação), exibindo dinamicamente qual professor realizou a reserva do espaço para evitar duplicidade.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-### Premium Partners
+## 🛠️ Stack Tecnológica
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+O projeto foi construído utilizando o padrão de arquitetura **SPA (Single Page Application)** moderno, eliminando carregamentos lentos de página e entregando uma experiência nativa de aplicativo.
 
-## Contributing
+* **Back-end:** [Laravel 10/11](https://laravel.com/) (PHP) - Motor robusto para API, ORM (Eloquent), Segurança e Regras de Negócio.
+* **Front-end:** [React.js](https://react.dev/) - Biblioteca componentizada para interfaces reativas e performáticas.
+* **Ponte de Comunicação:** [Inertia.js](https://inertiajs.com/) - Camada que une o Laravel ao React sem a necessidade de criar APIs REST complexas do zero, mantendo o roteamento controlado pelo back-end.
+* **Estilização:** [Tailwind CSS](https://tailwindcss.com/) - Framework utilitário utilitário para design responsivo e Dark Mode nativo.
+* **Banco de Dados:** MySQL - Modelo relacional para integr
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* ## 📐 Arquitetura e Estrutura de Pastas
 
-## Code of Conduct
+O projeto adota o padrão **MVC (Model-View-Controller)** adaptado para o ecossistema Inertia.js:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```text
+educasync/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/     # Controladores (Regras de negócio, filtros e Eager Loading)
+│   └── Models/              # Modelos Relacionais Eloquent (Sala, Unidade, Agendamento, User)
+├── database/
+│   └── migrations/          # Estrutura de criação e versionamento do banco de dados
+├── resources/
+│   └── js/
+│       ├── Components/      # Componentes React reutilizáveis (Inputs, Cards, Modais)
+│       ├── Layouts/         # Estruturas de página (Autenticado, Visitante)
+│       └── Pages/           # Telas da Aplicação (Welcome.jsx, Salas/Index.jsx)
+└── public/
+    └── images/              # Ativos estáticos e mídias de interface (Backgrounds, Favicons)
+````
 
-## Security Vulnerabilities
+---
+## Autor
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- [@Arthur-Cardoso-de-jesus](https://github.com/Arthur-Cardoso-de-Jesus)
